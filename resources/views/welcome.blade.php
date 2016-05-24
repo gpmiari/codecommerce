@@ -42,6 +42,11 @@
             <div class="content">
                 <div class="title">Laravel 5</div>
                 <div class="quote">{{ Inspiring::quote() }}</div>
+                <div>
+                    <h1>Nick: {{ $nick }}</h1>
+                    <h2>Name: {{ $name }}</h2>
+                    <h3>Last name: {{ $lastName }}</h3>
+                </div>
             </div>
         </div>
     </body>

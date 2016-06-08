@@ -2,6 +2,7 @@
 
 namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\Category;
 use Illuminate\Http\Request;
 
 use CodeCommerce\Http\Requests;
@@ -9,6 +10,13 @@ use CodeCommerce\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+
+    private $categories;
+    public function __construct(Category $category)
+    {
+        $this->categories = $category;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,12 +24,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $nick = "MMiagui";
-        $name = "Guilherme";
-        $lastName = "Miari";
-
-
-        return view("welcome", compact("nick", "name", "lastName"));
+        $categories = $this->categories->all();
+        return view("welcome", compact("categories"));
     }
 
     /**

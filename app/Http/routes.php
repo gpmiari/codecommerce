@@ -11,6 +11,6 @@
 |
 */
 
-Route::get("/", "UserController@index");
-Route::get("/category", "AdminCategoriesController@index");
-Route::get("/products", "AdminProductsController@index");
+get("/", "UserController@index");
+get("/category", "AdminCategoriesController@index");
+get("/products", "AdminProductsController@index");

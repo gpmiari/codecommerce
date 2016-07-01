@@ -12,3 +12,5 @@
 */
 
 Route::get("/", "UserController@index");
+Route::get("/category", "AdminCategoriesController@index");
+Route::get("/products", "AdminProductsController@index");

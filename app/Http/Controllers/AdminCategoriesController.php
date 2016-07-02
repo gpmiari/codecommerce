@@ -18,7 +18,7 @@ class AdminCategoriesController extends Controller
         $this->categories = $category;
     }
 
-        /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

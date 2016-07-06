@@ -21,10 +21,14 @@ class AdminProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        products = $this->products->all();
-        return view("welcome", compact("products"));
+        if ($id){
+            return $this->products->find(1);
+        }
+
+        return +$this->products->all();
+//        return view("welcome", compact("products"));
     }
 
     /**

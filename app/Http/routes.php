@@ -25,10 +25,16 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::group(['prefix' => 'products'], function() {
         get('/{product?}', 'AdminProductsController@index');
+        post('/', 'AdminProductsController@store');
+        put('/', 'AdminProductsController@update');
+        delete('/', 'AdminProductsController@destroy');
     });
 
     Route::group(['prefix' => 'category'], function() {
         get('/{category?}', 'AdminCategoriesController@index');
+        post('/', 'AdminCategoriesControlle@store');
+        put('/', 'AdminCategoriesControlle@update');
+        delete('/', 'AdminCategoriesControlle@destroy');
     });
 
 });

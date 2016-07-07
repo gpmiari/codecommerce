@@ -24,7 +24,7 @@ get('admin/products', 'AdminProductsController@index');
 Route::group(['prefix' => 'admin'], function() {
 
     Route::group(['prefix' => 'products'], function() {
-        get('/{id?}', 'AdminProductsController@index');
+        get('/{product?}', 'AdminProductsController@index');
     });
 
     Route::group(['prefix' => 'category'], function() {

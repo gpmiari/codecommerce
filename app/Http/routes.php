@@ -40,5 +40,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => 'categories'], function () {
     get('', 'CategoriesController@index');
+    get('create', 'CategoriesController@create');
 
 });

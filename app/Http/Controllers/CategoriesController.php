@@ -19,7 +19,13 @@ class CategoriesController extends Controller
 
     public function index()
     {
-        return view('categories.index');
+        $categories = $this->model->all(array('id', 'name', 'description'));
+        return view('categories.index', compact('categories'));
+    }
+
+    public function create(){
+
+        return view('categories.create');
     }
 
 }

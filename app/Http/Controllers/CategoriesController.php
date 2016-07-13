@@ -3,10 +3,8 @@
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Category;
-use Illuminate\Http\Request;
-
 use CodeCommerce\Http\Requests;
-use CodeCommerce\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
@@ -24,8 +22,20 @@ class CategoriesController extends Controller
     }
 
     public function create(){
-
         return view('categories.create');
+    }
+
+    public function store(Request $request){
+        $input = $request->all();
+
+        $category = $this->model->fill($input);
+
+        try{
+            $category->save();
+            return redirect('categories');
+        } catch(Exception $e){
+            return view('errors.503');
+        }
     }
 
 }

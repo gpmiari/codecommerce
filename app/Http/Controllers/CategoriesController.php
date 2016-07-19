@@ -25,6 +25,22 @@ class CategoriesController extends Controller
         return view('categories.create');
     }
 
+    public function edit($id){
+        $category = $this->model->find($id);
+
+        return view('categories.edit', compact('category'));
+    }
+
+    public function update(Requests\CategoryRequest $request, $id){
+
+        try{
+            $this->model->find($id)->update($request->all());
+            return redirect()->route('categories');
+        } catch (\Exception $e){
+
+        }
+    }
+
     public function store(Requests\CategoryRequest $request){
         $input = $request->all();
 

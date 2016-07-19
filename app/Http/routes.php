@@ -43,5 +43,6 @@ Route::group(['prefix' => 'categories'], function () {
     get('create', ['as' => 'categories.create', 'uses' => 'CategoriesController@create']);
     post('/', ['as' => 'categories.store', 'uses' => 'CategoriesController@store']);
     get('/{id}/destroy', ['as' => 'categories.destroy', 'uses' => 'CategoriesController@destroy']);
-
+    get('/{id}/edit', ['as' => 'categories.edit', 'uses' => 'CategoriesController@edit']);
+    put('/{id}/update', ['as' => 'categories.update', 'uses' => 'CategoriesController@update']);
 });

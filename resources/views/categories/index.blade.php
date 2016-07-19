@@ -3,6 +3,11 @@
 @section('content')
     <div class="container">
         <h1>Categories</h1>
+        <div class="col-md-1">
+            <button onclick="location.href='{{ route('categories.create') }}'" class="btn btn-success">Create</button>
+        </div>
+        <br />
+        <br />
         <table class="table">
             <thead>
             <tr>

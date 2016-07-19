@@ -32,9 +32,18 @@ class CategoriesController extends Controller
 
         try{
             $category->save();
-            return redirect('categories');
-        } catch(Exception $e){
+            return redirect()->route('categories');
+        } catch(\Exception $e){
             return view('errors.503');
+        }
+    }
+
+    public function destroy($id){
+        try{
+            $this->model->find($id)->delete();
+            return redirect()->route('categories');
+        } catch (\Exception $e) {
+
         }
     }
 

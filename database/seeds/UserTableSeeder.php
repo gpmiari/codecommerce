@@ -3,7 +3,6 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent;
 use CodeCommerce\User;
-use Faker\Factory as Faker;
 
 class UserTableSeeder extends Seeder
 {
@@ -12,14 +11,12 @@ class UserTableSeeder extends Seeder
     {
         DB::table('users')->truncate();
 
-        $faker = Faker::create();
+        factory('CodeCommerce\User')->create([
+            'name' => 'Guilherme Miari',
+            'email' => 'gpmiari@gmail.com',
+            'password' => Hash::make('123456')
+        ]);
 
-        foreach (range(1, 15) as $i) {
-            User::create([
-                'name' => $faker->name(),
-                'email' => $faker->email(),
-                'password' => Hash::make($faker->word())
-            ]);
-        }
+        factory('CodeCommerce\User', 10)->create();
     }
 }

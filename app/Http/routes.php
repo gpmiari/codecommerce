@@ -46,3 +46,12 @@ Route::group(['prefix' => 'categories'], function () {
     get('/{id}/edit', ['as' => 'categories.edit', 'uses' => 'CategoriesController@edit']);
     put('/{id}/update', ['as' => 'categories.update', 'uses' => 'CategoriesController@update']);
 });
+
+Route::group(['prefix' => 'products'], function () {
+    get('', ['as' =>'products', 'uses' => 'ProductsController@index']);
+    get('create', ['as' => 'products.create', 'uses' => 'ProductsController@create']);
+    post('/', ['as' => 'products.store', 'uses' => 'ProductsController@store']);
+    get('/{id}/destroy', ['as' => 'products.destroy', 'uses' => 'ProductsController@destroy']);
+    get('/{id}/edit', ['as' => 'products.edit', 'uses' => 'ProductsController@edit']);
+    put('/{id}/update', ['as' => 'products.update', 'uses' => 'ProductsController@update']);
+});

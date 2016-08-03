@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Products extends Model
 {
     // liberando mass assigment
-    protected $fillable = ['name', 'description', 'price'];
+    protected $fillable = ['name', 'description', 'price', 'featured', 'recommend'];
 }

@@ -10,4 +10,8 @@ class Category extends Model
     protected $fillable = ['name', 'description'];
 
     protected $dates = ['deleted_at', 'updated_at', 'created_at'];
+
+    public function products(){
+        return $this->hasMany('CodeCommerce\Products');
+    }
 }

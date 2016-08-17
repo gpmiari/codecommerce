@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent;
 use CodeCommerce\Products;
+use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class ProductTableSeeder extends Seeder
 {
@@ -11,6 +11,7 @@ class ProductTableSeeder extends Seeder
     {
         DB::table('products')->truncate();
 
-        factory('CodeCommerce\Products', 10)->create();
+        factory('CodeCommerce\Products', 40)->create();
+
     }
 }
